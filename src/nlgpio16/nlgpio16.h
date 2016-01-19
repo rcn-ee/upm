@@ -83,9 +83,9 @@ namespace upm {
   public:
 
     // ADC analog ref voltage is 3.3v
-    static const float ADC_AREF = 3.3;
+    static constexpr  float ADC_AREF = 3.3;
     // 10-bit precision (0-1023)
-    static const int ADC_PRECISION = 10;
+    static constexpr  int ADC_PRECISION = 10;
 
     /**
      * NLGPIO16 object constructor

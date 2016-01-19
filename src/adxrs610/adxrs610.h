@@ -161,12 +161,12 @@ namespace upm {
     float m_centerVolts;
 
     // volts per degree / second (typ)
-    static const float m_degreeCoeff = 0.006;
+    const float m_degreeCoeff = 0.006;
 
     // volts per degree C (typ)
-    static const float m_temperatureCoeff = 0.009;
+    const float m_temperatureCoeff = 0.009;
     // nominal temperature at m_centerVolts
-    static const float m_temperatureNom = 25.0;
+    const float m_temperatureNom = 25.0;
   };
 }
 
