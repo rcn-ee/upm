@@ -27,9 +27,18 @@
 #include <string>
 #include <mraa/aio.hpp>
 
+// volts per degree / second (typ)
+#define m_degreeCoeff 0.006
+
+// volts per degree C (typ)
+#define m_temperatureCoeff 0.009
+
+// nominal temperature at m_centerVolts
+#define m_temperatureNom 25.0
+
 namespace upm {
   /**
-   * @brief DFRobot ADXRS610 Gyro Beakout board
+   * @brief DFRobot ADXRS610 Gyro Breakout Board
    * @defgroup adxrs610 libupm-adxrs610
    * @ingroup dfrobot analog compass
    */
@@ -37,7 +46,7 @@ namespace upm {
   /**
    * @library adxrs610
    * @sensor adxrs610
-   * @comname DFRobot ADXRS610 Gyro Beakout board
+   * @comname DFRobot ADXRS610 Gyro Breakout Board
    * @altname ADXRS610
    * @type compass
    * @man dfrobot
@@ -56,6 +65,7 @@ namespace upm {
    *
    * This driver was developed using the DFRobot ADXRS610 Gyro Beakout board.
    *
+   * @image html adxrs610.jpg
    * @snippet adxrs610.cxx Interesting
    */
 
@@ -159,14 +169,6 @@ namespace upm {
 
     // aref / 2
     float m_centerVolts;
-
-    // volts per degree / second (typ)
-    const float m_degreeCoeff = 0.006;
-
-    // volts per degree C (typ)
-    const float m_temperatureCoeff = 0.009;
-    // nominal temperature at m_centerVolts
-    const float m_temperatureNom = 25.0;
   };
 }
 

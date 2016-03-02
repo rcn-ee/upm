@@ -28,10 +28,6 @@
 #include <mraa/i2c.hpp>
 #include <mraa/gpio.hpp>
 
-#if defined(SWIGJAVA) || defined(JAVACALLBACK)
-#include "../IsrCallback.h"
-#endif
-
 #define BMA220_I2C_BUS 0
 #define BMA220_DEFAULT_ADDR 0x0a
 
@@ -67,6 +63,7 @@ namespace upm {
    *
    * This driver was developed on a DFRobot BMA (Tiny).
    *
+   * @image html bma220.jpg
    * @snippet bma220.cxx Interesting
    */
 
@@ -782,7 +779,7 @@ namespace upm {
     bool resetInterrupts();
 
 #if defined(SWIGJAVA) || defined(JAVACALLBACK)
-    void installISR(int gpio, mraa::Edge level, IsrCallback *cb);
+    void installISR(int gpio, mraa::Edge level, jobject runnable);
 #else
     /**
      * install an interrupt handler.

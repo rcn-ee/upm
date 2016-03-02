@@ -42,6 +42,13 @@
 #include <mraa/spi.hpp>
 #include <mraa/gpio.hpp>
 
+// Our crystal oscillator frequency (32Mhz)
+#define FXOSC_FREQ 32000000.0
+
+// Our freq stepping resolution (in Hz) if FXOSC_FREQ is 32Mhz
+// (FXOSC_FREQ / 2^19) =
+#define FXOSC_STEP 61.03515625
+
 namespace upm {
   
   /**
@@ -84,24 +91,18 @@ namespace upm {
   public:
 
     // The default chip revision
-    static constexpr uint8_t chipRevision = 0x12;
+    static const uint8_t chipRevision = 0x12;
 
-    // Our crystal oscillator frequency (32Mhz)
-    static constexpr double FXOSC_FREQ = 32000000.0;
-
-    // Our freq stepping resolution (in Hz) if FXOSC_FREQ is 32Mhz
-    // (FXOSC_FREQ / 2^19) =
-    static constexpr double FXOSC_STEP = 61.03515625;
 
     // total FIFO size
-    static constexpr int FIFO_SIZE = 256;
+    static const int FIFO_SIZE = 256;
 
     // differentiator between high and low bands
-    static constexpr int RF_MID_BAND_THRESH = 525000000;
+    static const int RF_MID_BAND_THRESH = 525000000;
 
     // LoRa RSSI offsets depending on LF or HF bands
-    static constexpr int LOR_RSSI_OFFSET_HF = -157;
-    static constexpr int LOR_RSSI_OFFSET_LF = -164;
+    static const int LOR_RSSI_OFFSET_HF = -157;
+    static const int LOR_RSSI_OFFSET_LF = -164;
 
     /**
      * What modem we are configured for

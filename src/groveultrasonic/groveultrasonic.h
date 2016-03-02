@@ -46,7 +46,7 @@ namespace upm {
  * @sensor groveultrasonic
  * @comname Grove Ultrasonic Ranger
  * @type sound
- * @man grove
+ * @man seeed
  * @con gpio
  *
  * @brief API for Grove Ultrasonic Ranger
@@ -57,6 +57,7 @@ namespace upm {
  * to 4 m (13'1.5") and works best when the object is within a 30 degree angle
  * relative to the sensor.
  *
+ * @image html groveultrasonic.jpg
  * @snippet groveultrasonic.cxx Interesting
  */
 class GroveUltraSonic {

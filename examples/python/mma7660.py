@@ -26,7 +26,7 @@ import pyupm_mma7660 as upmMMA7660
 
 # Instantiate an MMA7660 on I2C bus 0
 myDigitalAccelerometer = upmMMA7660.MMA7660(
-					1, 
+					upmMMA7660.MMA7660_I2C_BUS, 
 					upmMMA7660.MMA7660_DEFAULT_I2C_ADDR);
 
 

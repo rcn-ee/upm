@@ -24,7 +24,7 @@ from time import sleep
 import pyupm_adxl345 as adxl345
 
 # Create an I2C accelerometer object
-adxl = adxl345.Adxl345(0)
+adxl = adxl345.Adxl345(1)
 
 # Loop indefinitely
 while True:

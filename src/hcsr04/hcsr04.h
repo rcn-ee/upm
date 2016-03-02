@@ -30,10 +30,6 @@
 #include <mraa/pwm.h>
 #include <sys/time.h>
 
-#if defined(SWIGJAVA) || defined(JAVACALLBACK)
-#include "../IsrCallback.h"
-#endif
-
 #define CM 1
 #define INC 0
 
@@ -56,6 +52,7 @@ namespace upm {
  *
  * This module defines the HC-SR04 interface for libhcsr04
  *
+ * @image html groveultrasonic.jpg
  * @snippet hcsr04.cxx Interesting
  */
 class HCSR04 {

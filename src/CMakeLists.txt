@@ -1,3 +1,14 @@
+macro (file_to_list readfile outlist)
+  FILE(READ "${readfile}" contents)
+  STRING(REGEX REPLACE ";" "\\\\;" contents "${contents}")
+  STRING(REGEX REPLACE "\n" ";" contents "${contents}")
+  set("${outlist}" "${contents}" )
+endmacro()
+
+file_to_list ("javaswig_blacklist" JAVASWIG_BLACKLIST)
+file_to_list ("pythonswig_blacklist" PYTHONSWIG_BLACKLIST)
+file_to_list ("nodeswig_blacklist" NODESWIG_BLACKLIST)
+
 macro(subdirlist result curdir)
   file(GLOB children RELATIVE ${curdir} ${curdir}/*)
   set(dirlist "")
@@ -44,7 +55,7 @@ macro(upm_SWIG_NODE)
       "${NODE_INCLUDE_DIRS}"
      )
     set_target_properties (jsupm_${libname} PROPERTIES
-      COMPILE_FLAGS "${CMAKE_CXX_FLAGS} -DBUILDING_NODE_EXTENSION -std=c++11 -DSWIG_V8_VERSION=0x0${V8_DEFINE_STRING}"
+      COMPILE_FLAGS "${CMAKE_CXX_FLAGS} -DBUILDING_NODE_EXTENSION -DSWIG_V8_VERSION=0x0${V8_DEFINE_STRING}"
       PREFIX ""
       SUFFIX ".node"
     )
@@ -67,6 +78,7 @@ macro(upm_SWIG_JAVA)
   if (BUILDSWIGJAVA AND BUILDSWIG)
 
     FIND_PACKAGE (JNI REQUIRED)
+    pkg_check_modules (MRAAJAVA REQUIRED mraajava>=0.8.0)
 
     include_directories (
       ${JAVA_INCLUDE_PATH}
@@ -77,7 +89,7 @@ macro(upm_SWIG_JAVA)
     set_source_files_properties (javaupm_${libname}.i PROPERTIES CPLUSPLUS ON)
     set_source_files_properties (javaupm_${libname}.i PROPERTIES SWIG_FLAGS ";-package;upm_${libname};-I${CMAKE_BINARY_DIR}/src")
     swig_add_module (javaupm_${libname} java javaupm_${libname}.i ${module_src})
-    swig_link_libraries (javaupm_${libname} ${MRAA_LIBRARIES} ${JAVA_LIBRARIES})
+    swig_link_libraries (javaupm_${libname} ${MRAAJAVA_LDFLAGS} ${JAVA_LDFLAGS})
     target_include_directories ( ${SWIG_MODULE_javaupm_${libname}_REAL_NAME}
       PUBLIC
       "${JAVA_INCLUDE_DIRS}"
@@ -88,12 +100,8 @@ macro(upm_SWIG_JAVA)
       PREFIX "lib"
       SUFFIX ".so"
     )
-    install (FILES ${CMAKE_CURRENT_BINARY_DIR}/libjavaupm_${libname}.so
-        DESTINATION lib/java
-    )
-    install (FILES ${CMAKE_CURRENT_BINARY_DIR}/upm_${libname}.jar
-        DESTINATION lib/java
-    )
+    install (TARGETS javaupm_${libname} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    install (FILES ${CMAKE_CURRENT_BINARY_DIR}/upm_${libname}.jar DESTINATION ${CMAKE_INSTALL_LIBDIR}/../lib/java)
 
     if (NOT DEFINED $ENV{JAVA_HOME_NATIVE})
         set (JAVAC $ENV{JAVA_HOME}/bin/javac)
@@ -158,9 +166,6 @@ if (SWIG_FOUND)
     endmacro()
 
   endif(BUILDSWIGNODE)
-#  if(BUILDSWIGJAVA)
-#    add_subdirectory (java)
-#  endif(BUILDSWIGJAVA)
 
 endif()
 
@@ -180,9 +185,15 @@ macro(upm_module_init)
   )
   upm_create_install_pkgconfig (upm-${libname}.pc ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
   if (SWIG_FOUND)
-    upm_swig_python()
-    upm_swig_node()
-    upm_swig_java()
+    if (NOT ";${PYTHONSWIG_BLACKLIST};" MATCHES ";${libname};")
+      upm_swig_python()
+    endif()
+    if (NOT ";${NODESWIG_BLACKLIST};" MATCHES ";${libname};")
+      upm_swig_node()
+    endif()
+    if (NOT ";${JAVASWIG_BLACKLIST};" MATCHES ";${libname};")
+      upm_swig_java()
+    endif()
   endif()
   if (BUILDDOC)
     upm_doxygen()
