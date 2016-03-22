@@ -23,8 +23,8 @@
 import time
 import pyupm_grove as grove
 
-# Create the Grove LED object using GPIO pin 2
-led = grove.GroveLed(7)
+# Create the Grove LED object using GPIO_50
+led = grove.GroveLed(60)
 
 # Print the name
 print led.name()
