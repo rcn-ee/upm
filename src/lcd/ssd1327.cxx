@@ -163,7 +163,7 @@ SSD1327::draw(uint8_t* data, int bytes)
             value |= (bitTwo) ? grayLow : 0x00;
 
             m_i2c_lcd_control.writeReg(LCD_DATA, value);
-            usleep(CMD_SLEEP - 2000);
+            //usleep(CMD_SLEEP - 2000);
         }
     }
 
@@ -265,7 +265,7 @@ SSD1327::writeChar(uint8_t value)
             data |= (bitTwo) ? grayLow : 0x00;
 
             rv = m_i2c_lcd_control.writeReg(LCD_DATA, data);
-            usleep(CMD_SLEEP - 2000);
+            //usleep(CMD_SLEEP - 2000);
         }
     }
     return rv;

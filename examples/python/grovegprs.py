@@ -41,8 +41,8 @@ def exitHandler():
 atexit.register(exitHandler)
 signal.signal(signal.SIGINT, SIGINTHandler)
 
-# Set the baud rate, 19200 baud is the default.
-if (sensor.setBaudRate(19200)):
+# Set the baud rate, 9600 baud is the default.
+if (sensor.setBaudRate(9600)):
 	print "Failed to set baud rate"
 	sys.exit(0)
 
