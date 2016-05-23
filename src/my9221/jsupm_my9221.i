@@ -16,16 +16,3 @@
     #include "grovecircularled.hpp"
 %}
 
-<<<<<<< HEAD
-%include "groveledbar.h"
-%{
-    #include "groveledbar.h"
-%}
-
-%include "grovecircularled.h"
-%{
-    #include "grovecircularled.h"
-%}
-
-=======
->>>>>>> intel-dev

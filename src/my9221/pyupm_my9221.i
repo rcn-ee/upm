@@ -19,13 +19,3 @@
 %{
     #include "grovecircularled.hpp"
 %}
-
-%include "groveledbar.h"
-%{
-    #include "groveledbar.h"
-%}
-
-%include "grovecircularled.h"
-%{
-    #include "grovecircularled.h"
-%}
