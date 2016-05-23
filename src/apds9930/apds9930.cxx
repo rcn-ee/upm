@@ -26,7 +26,7 @@
 #include <string>
 #include <stdexcept>
 
-#include "apds9930.h"
+#include "apds9930.hpp"
 
 using namespace upm;
 
@@ -41,7 +41,12 @@ APDS9930::APDS9930(int device)
 
 APDS9930::~APDS9930()
 {
+<<<<<<< HEAD
     // mraa_iio_stop(m_iio);
+=======
+    if(m_iio)
+        mraa_iio_close(m_iio);
+>>>>>>> intel-dev
 }
 
 int

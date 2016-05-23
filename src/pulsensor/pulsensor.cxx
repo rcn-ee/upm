@@ -28,7 +28,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#include "pulsensor.h"
+#include "pulsensor.hpp"
+
+using namespace upm;
 
 using namespace upm;
 

@@ -25,7 +25,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <signal.h>
-#include "kxcjk1013.h"
+#include "kxcjk1013.hpp"
 
 using namespace std;
 
@@ -44,8 +44,12 @@ data_callback(char* data)
 {
     float x, y, z;
     accelerometer->extract3Axis(data, &x, &y, &z);
+<<<<<<< HEAD
     printf("%.1f               %.1f               %.1f\n", x, y, z);
     // usleep(100);
+=======
+    printf("% .1f               % .1f               % .1f\n", x, y, z);
+>>>>>>> intel-dev
 }
 
 int

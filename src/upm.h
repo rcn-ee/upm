@@ -1,332 +1,390 @@
-/*
- * Author: Brendan Le Foll <brendan.le.foll@intel.com>
- * Contributions: Mihai Tudor Panu <mihai.tudor.panu@intel.com>
- * Copyright (c) 2014 Intel Corporation.
- *
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
- * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
- * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-#pragma once
+	/*
+	 * Author: Brendan Le Foll <brendan.le.foll@intel.com>
+	 * Contributions: Mihai Tudor Panu <mihai.tudor.panu@intel.com>
+	 * Copyright (c) 2014 Intel Corporation.
+	 *
+	 * Permission is hereby granted, free of charge, to any person obtaining
+	 * a copy of this software and associated documentation files (the
+	 * "Software"), to deal in the Software without restriction, including
+	 * without limitation the rights to use, copy, modify, merge, publish,
+	 * distribute, sublicense, and/or sell copies of the Software, and to
+	 * permit persons to whom the Software is furnished to do so, subject to
+	 * the following conditions:
+	 *
+	 * The above copyright notice and this permission notice shall be
+	 * included in all copies or substantial portions of the Software.
+	 *
+	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+	 * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	 * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	 * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+	 * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+	 * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+	 * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	 */
+	#pragma once
 
-/// @cond DEV
-/**
- * This file only serves to describe sensor groups based on libmraa groups.
- * Sensors may belong to multiple groups. This is purely a documentation header
- * and is not meant to be installed anywhere.
- */
-/// @endcond DEV
+	/// @cond DEV
+	/**
+	 * This file only serves to describe sensor groups based on libmraa groups.
+	 * Sensors may belong to multiple groups. This is purely a documentation header
+	 * and is not meant to be installed anywhere.
+	 */
+	/// @endcond DEV
 
-////////////////////////////////////////////////////////////////// @cond HEA
-/// Main group place holders.
-////////////////////////////////////////////////////////////////// @endcond HEA
+	////////////////////////////////////////////////////////////////// @cond HEA
+	/// Main group place holders.
+	////////////////////////////////////////////////////////////////// @endcond HEA
 
-/**
- * @brief Sensors grouped by category
- * @defgroup bycat Sensor Categories
- */
+	/**
+	 * @brief Sensors grouped by category
+	 * @defgroup bycat Sensor Categories
+	 */
 
-/**
- * @brief Sensors grouped by connection type
- * @defgroup bycon Connection Type
- */
+	/**
+	 * @brief Sensors grouped by C++ interface
+	 * @defgroup byif C++ Interface
+	 */
 
-/**
- * @brief Sensors grouped by manufacturer
- * @defgroup byman Manufacturer
- */
+	/**
+	 * @brief Sensors grouped by connection type
+	 * @defgroup bycon Connection Type
+	 */
 
-/**
- * @brief Sensors grouped into starter kits
- * @defgroup bykit Starter Kits
- */
+	/**
+	 * @brief Sensors grouped by manufacturer
+	 * @defgroup byman Manufacturer
+	 */
 
-////////////////////////////////////////////////////////////////// @cond CAT
-/// Groups for the various Sensor Categories.
-////////////////////////////////////////////////////////////////// @endcond CAT
+	/**
+	 * @brief Sensors grouped into starter kits
+	 * @defgroup bykit Starter Kits
+	 */
 
-/**
- * @brief Measure acceleration & tilt or collision detection
- * @defgroup accelerometer Accelerometer
- * @ingroup bycat
- */
+	////////////////////////////////////////////////////////////////// @cond CAT
+	/// Groups for the various Sensor Categories.
+	////////////////////////////////////////////////////////////////// @endcond CAT
 
-/**
- * @brief Sensors with a variable voltage output
- * @defgroup ainput Analog Inputs
- * @ingroup bycat
- */
+	/**
+	 * @brief Measure acceleration & tilt or collision detection
+	 * @defgroup accelerometer Accelerometer
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Measure pressure and atmospheric conditions
- * @defgroup pressure Atmospheric Pressure
- * @ingroup bycat
- */
+	/**
+	 * @brief Sensors with a variable voltage output
+	 * @defgroup ainput Analog Inputs
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Button, Switch or Toggle
- * @defgroup button Button
- * @ingroup bycat
- */
+	/**
+	 * @brief Measure pressure and atmospheric conditions
+	 * @defgroup pressure Atmospheric Pressure
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Light sensors with special function: Color recognition
- * @defgroup color Color Sensor
- * @ingroup bycat
- */
+	/**
+	 * @brief Button, Switch or Toggle
+	 * @defgroup button Button
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Measure magnetic field to give rotation or heading
- * @defgroup compass Compass/Gyro/Magnometers
- * @ingroup bycat
- */
+	/**
+	 * @brief Light sensors with special function: Color recognition
+	 * @defgroup color Color Sensor
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Resistive digital to analog converters (DAC)
- * @defgroup digipot Digital Potentiometer
- * @ingroup bycat
- */
+	/**
+	 * @brief Measure magnetic field to give rotation or heading
+	 * @defgroup compass Compass/Gyro/Magnometers
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief TFT, LCD, LED display elements
- * @defgroup display Displays
- * @ingroup bycat
- */
+	/**
+	 * @brief Resistive digital to analog converters (DAC)
+	 * @defgroup digipot Digital Potentiometer
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Measure electric current and ADC converters
- * @defgroup electric Electricity
- * @ingroup bycat
- */
+	/**
+	 * @brief TFT, LCD, LED display elements
+	 * @defgroup display Displays
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Measure bending or detect vibration
- * @defgroup flexfor Flex/Force
- * @ingroup bycat
- */
+	/**
+	 * @brief Measure electric current and ADC converters
+	 * @defgroup electric Electricity
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Measure substance concentrations in gases
- * @defgroup gaseous Gas
- * @ingroup bycat
- */
+	/**
+	 * @brief Measure bending or detect vibration
+	 * @defgroup flexfor Flex/Force
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Provide positioning capabilities
- * @defgroup gps GPS
- * @ingroup bycat
- */
+	/**
+	 * @brief Measure substance concentrations in gases
+	 * @defgroup gaseous Gas
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief LEDs, LED strips, LED matrix displays & controllers
- * @defgroup led LEDs
- * @ingroup bycat
- */
+	/**
+	 * @brief Provide positioning capabilities
+	 * @defgroup gps GPS
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Measure light intensity or distances
- * @defgroup light Light/Proximity/IR
- * @ingroup bycat
- */
+	/**
+	 * @brief LEDs, LED strips, LED matrix displays & controllers
+	 * @defgroup led LEDs
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Measure liquid flow rates or levels
- * @defgroup liquid Liquid Flow
- * @ingroup bycat
- */
+	/**
+	 * @brief Measure light intensity or distances
+	 * @defgroup light Light/Proximity/IR
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Sensors with specific medical application
- * @defgroup medical Medical
- * @ingroup bycat
- */
+	/**
+	 * @brief Measure liquid flow rates or levels
+	 * @defgroup liquid Liquid Flow
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Various motors & controllers to get things moving
- * @defgroup motor Motor
- * @ingroup bycat
- */
+	/**
+	 * @brief Sensors with specific medical application
+	 * @defgroup medical Medical
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Other types of supported sensors
- * @defgroup other Other
- * @ingroup bycat
- */
+	/**
+	 * @brief Various motors & controllers to get things moving
+	 * @defgroup motor Motor
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Different low and high power relays
- * @defgroup relay Relay
- * @ingroup bycat
- */
+	/**
+	 * @brief Other types of supported sensors
+	 * @defgroup other Other
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Wireless sensors using RFID tags
- * @defgroup rfid RFID
- * @ingroup bycat
- */
+	/**
+	 * @brief Different low and high power relays
+	 * @defgroup relay Relay
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Various servo motors & controllers
- * @defgroup servos Servo
- * @ingroup bycat
- */
+	/**
+	 * @brief Wireless sensors using RFID tags
+	 * @defgroup rfid RFID
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Provide sound recording or playback
- * @defgroup sound Sound
- * @ingroup bycat
- */
+	/**
+	 * @brief Various servo motors & controllers
+	 * @defgroup servos Servo
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Measure temperature & humidity
- * @defgroup temp Temperature/Humidity
- * @ingroup bycat
- */
+	/**
+	 * @brief Provide sound recording or playback
+	 * @defgroup sound Sound
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Sensors using serial communication
- * @defgroup serial Serial
- * @ingroup bycat
- */
+	/**
+	 * @brief Measure temperature & humidity
+	 * @defgroup temp Temperature/Humidity
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Real time clocks & time measurement
- * @defgroup time Time
- * @ingroup bycat
- */
+	/**
+	 * @brief Sensors using serial communication
+	 * @defgroup serial Serial
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Capacitive touch sensors
- * @defgroup touch Touch Sensor
- * @ingroup bycat
- */
+	/**
+	 * @brief Real time clocks & time measurement
+	 * @defgroup time Time
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Provide WiFi, Bluetooth, RF communication
- * @defgroup wifi Wireless Communication
- * @ingroup bycat
- */
+	/**
+	 * @brief Capacitive touch sensors
+	 * @defgroup touch Touch Sensor
+	 * @ingroup bycat
+	 */
 
-////////////////////////////////////////////////////////////////// @cond CON
-/// Groups for the various Connection Types.
-////////////////////////////////////////////////////////////////// @endcond CON
+	/**
+	 * @brief Provide video or video camera access
+	 * @defgroup video Video
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Sensors requiring an ADC value to be read
- * @defgroup analog AIO
- * @ingroup bycon
- */
+	/**
+	 * @brief Provide WiFi, Bluetooth, RF communication
+	 * @defgroup wifi Wireless Communication
+	 * @ingroup bycat
+	 */
 
-/**
- * @brief Modules using the i2c bus
- * @defgroup i2c I2C
- * @ingroup bycon
- */
+	////////////////////////////////////////////////////////////////// @cond IF
+	/// Groups for the various Sensor C++ Interfaces.
+	////////////////////////////////////////////////////////////////// @endcond IF
 
-/**
- * @brief Modules using the SPI bus
- * @defgroup spi SPI
- * @ingroup bycon
- */
+	/**
+	 * @brief Implements ILightSensor
+	 * @defgroup ilightsensor ILightSensor
+	 * @ingroup byif
+	 */
 
-/**
- * @brief Modules using GPIOs directly
- * @defgroup gpio GPIO
- * @ingroup bycon
- */
+	 /**
+	 * @brief Implements ILightController
+	 * @defgroup ilightcontroller ILightController
+	 * @ingroup byif
+	 */
 
-/**
- * @brief Modules using a PWM capable GPIO pin
- * @defgroup pwm PWM
- * @ingroup bycon
- */
+	/**
+	 * @brief Implements IPressureSensor
+	 * @defgroup ipressuresensor IPressureSensor
+	 * @ingroup byif
+	 */
 
-/**
- * @brief Modules using a serial connection (RX/TX)
- * @defgroup uart UART
- * @ingroup bycon
- */
+	 /**
+	 * @brief Implements ITemperatureSensor
+	 * @defgroup itemperaturesensor ITemperatureSensor
+	 * @ingroup byif
+	 */
 
-////////////////////////////////////////////////////////////////// @cond MAN
-/// Groups for the various Manufacturers.
-////////////////////////////////////////////////////////////////// @endcond MAN
+	/**
+	 * @brief Implements IADC
+	 * @defgroup iadc IADC
+	 * @ingroup byif
+	 */
 
-/**
- * @brief Adafruit Industries
- * @defgroup adafruit Adafruit
- * @ingroup byman
- */
+	 /**
+	 * @brief Implements ICOSensor
+	 * @defgroup ic02sensor ICOSensor
+	 * @ingroup byif
+	 */
 
-/**
- * @brief EMax
- * @defgroup emax EMax
- * @ingroup byman
- */
 
-/**
- * @brief DFRobot
- * @defgroup dfrobot DFRobot
- * @ingroup byman
- */
+	////////////////////////////////////////////////////////////////// @cond CON
+	/// Groups for the various Connection Types.
+	////////////////////////////////////////////////////////////////// @endcond CON
 
-/**
- * @brief Comet System
- * @defgroup comet Comet
- * @ingroup byman
- */
+	/**
+	 * @brief Sensors requiring an ADC value to be read
+	 * @defgroup analog AIO
+	 * @ingroup bycon
+	 */
 
-/**
- * @brief EpicTinker
- * @defgroup epict EpicTinker
- * @ingroup byman
- */
+	/**
+	 * @brief Modules using the i2c bus
+	 * @defgroup i2c I2C
+	 * @ingroup bycon
+	 */
 
-/**
- * @brief Freescale
- * @defgroup freescale Freescale
- * @ingroup byman
- */
- 
-/**
- * @brief Generic Brands
- * @defgroup generic Generic
- * @ingroup byman
- */
+	/**
+	 * @brief Modules using the SPI bus
+	 * @defgroup spi SPI
+	 * @ingroup bycon
+	 */
 
-/**
- * @brief Honeywell
- * @defgroup honeywell Honeywell
- * @ingroup byman
- */
+	/**
+	 * @brief Modules using GPIOs directly
+	 * @defgroup gpio GPIO
+	 * @ingroup bycon
+	 */
 
-/**
- * @brief Maxim Integrated
- * @defgroup maxim Maxim Integrated
- * @ingroup byman
- */
+	/**
+	 * @brief Modules using a PWM capable GPIO pin
+	 * @defgroup pwm PWM
+	 * @ingroup bycon
+	 */
 
-/**
- * @brief Numato Labs
- * @defgroup numatolabs Numato Labs
- * @ingroup byman
- */
+	/**
+	 * @brief Modules using a serial connection (RX/TX)
+	 * @defgroup uart UART
+	 * @ingroup bycon
+	 */
 
-/**
+	////////////////////////////////////////////////////////////////// @cond MAN
+	/// Groups for the various Manufacturers.
+	////////////////////////////////////////////////////////////////// @endcond MAN
+
+	/**
+	 * @brief Adafruit Industries
+	 * @defgroup adafruit Adafruit
+	 * @ingroup byman
+	 */
+
+	/**
+	 * @brief EMax
+	 * @defgroup emax EMax
+	 * @ingroup byman
+	 */
+
+	/**
+	 * @brief DFRobot
+	 * @defgroup dfrobot DFRobot
+	 * @ingroup byman
+	 */
+
+	/**
+	 * @brief Comet System
+	 * @defgroup comet Comet
+	 * @ingroup byman
+	 */
+
+	/**
+	 * @brief EpicTinker
+	 * @defgroup epict EpicTinker
+	 * @ingroup byman
+	 */
+
+	/**
+	 * @brief Freescale
+	 * @defgroup freescale Freescale
+	 * @ingroup byman
+	 */
+	 
+	/**
+	 * @brief Generic Brands
+	 * @defgroup generic Generic
+	 * @ingroup byman
+	 */
+
+	/**
+	 * @brief Honeywell
+	 * @defgroup honeywell Honeywell
+	 * @ingroup byman
+	 */
+
+	/**
+	 * @brief Maxim Integrated
+	 * @defgroup maxim Maxim Integrated
+	 * @ingroup byman
+	 */
+
+	/**
+	 * @brief Numato Labs
+	 * @defgroup numatolabs Numato Labs
+	 * @ingroup byman
+	 */
+
+	/**
+	 * @brief Mouser
+	 * @defgroup mouser Mouser
+	 * @ingroup byman
+	 */
+
+	/**
  * @brief Omega
  * @defgroup omega Omega
  * @ingroup byman
@@ -355,6 +413,30 @@
  * @defgroup veris Veris Industries
  * @ingroup byman
  */
+
+ /**
+ * @brief Silicon Labs
+ * @defgroup silabs Silicon Labs
+ * @ingroup byman
+ */
+
+/**
+ * @brief Bosch
+ * @defgroup bosch Bosch
+ * @ingroup byman
+ */
+
+/**
+ * @brief Amphenol
+ * @defgroup amphenol Amphenol
+ * @ingroup byman
+ */
+ 
+/**
+ * @brief Open Electrons
+ * @defgroup openelectrons Open Electrons
+ * @ingroup byman
+ */ 
 
 ////////////////////////////////////////////////////////////////// @cond KIT
 /// Groups for the various Starter Kits.

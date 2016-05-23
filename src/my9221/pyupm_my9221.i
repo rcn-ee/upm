@@ -5,9 +5,19 @@
 
 %feature("autodoc", "3");
 
-%include "my9221.h"
+%include "my9221.hpp"
 %{
-    #include "my9221.h"
+    #include "my9221.hpp"
+%}
+
+%include "groveledbar.hpp"
+%{
+    #include "groveledbar.hpp"
+%}
+
+%include "grovecircularled.hpp"
+%{
+    #include "grovecircularled.hpp"
 %}
 
 %include "groveledbar.h"
